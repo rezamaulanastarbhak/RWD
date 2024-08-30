@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <h1>Berita Terbaru dari Antara</h1>
+    <div id="berita-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const response = await fetch("https://api-berita-indonesia.vercel.app/antara/terbaru/");
+                const data = await response.json();
+
+                const beritaContainer = document.getElementById("berita-container");
+
+                data.forEach(berita => {
+                    const beritaElement = document.createElement("div");
+                    beritaElement.innerHTML = `
+                        <h2>${berita.title}</h2>
+                        <p>${berita.date}</p>
+                        <p>${berita.content}</p>
+                        <hr>
+                    `;
+                    beritaContainer.appendChild(beritaElement);
+                });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        });
+    </script>
+</body>
+</html>

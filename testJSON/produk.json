@@ -1,0 +1,33 @@
+{
+    "produk": [
+      {
+        "id": 1,
+        "nama": "Kaos Polos",
+        "harga": 15000,
+        "deskripsi": "Kaos polos berbahan katun",
+        "gambar": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//98/MTA-47650029/tidak_ada_merk_kaos_polos_cotton_combed_30s_hitam_premium_full01_e64fda4c.jpg"
+      },
+      {
+        "id": 2,
+        "nama": "Celana Jeans",
+        "harga": 250000,
+        "deskripsi": "Celana jeans slim fit",
+        "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAeVYEcz42-1F0EuFPLl99izEJqbHXR6g7ziwRgtEkRg&s"
+      },
+      {
+        "id": 3,
+        "nama": "Sepatu Sneakers",
+        "harga": 300000,
+        "deskripsi": "Sepatu sneakers casual",
+        "gambar": "https://ncrsport.com/img/storage/large/A00916C-1.jpg"
+      },
+      {
+        "id": 4,
+        "nama": "Topi",
+        "harga": 40000,
+        "deskripsi": "Sepatu sneakers casual",
+        "gambar": "https://ncrsport.com/img/storage/large/A00916C-1.jpg"
+      }
+    ]
+  }
+  

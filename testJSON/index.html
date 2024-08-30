@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Fetch API</title>
+</head>
+<body>
+  <h1>Daftar Produk</h1>
+  <div id="daftar-produk">
+    
+  </div>
+
+  <script>
+    fetch('produk.json')
+      .then(response => response.json())
+      .then(data => {
+        const produkContainer = document.getElementById('daftar-produk');
+        data.produk.forEach(produk => {
+          const produkElement = document.createElement('div');
+          produkElement.innerHTML = `
+            <h3>${produk.nama}</h3>
+            <p>Harga: ${produk.harga}</p>
+            <p>Deskripsi: ${produk.deskripsi}</p>
+            <img src="${produk.gambar}" alt="${produk.nama}" style="width: 200px;">
+          `;
+          produkContainer.appendChild(produkElement);
+        });
+      })
+      .catch(error => {
+        console.error('Terjadi kesalahan:', error);
+      });
+  </script>
+</body>
+</html>

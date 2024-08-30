@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-container {
+            display: flex;
+            background-color: aquamarine;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            /* flex-direction: row-reverse; */
+        }
+        .box-container > div {
+            background-color: blueviolet;
+            margin: 10px;
+            padding: 25px;
+        }
+
+        .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 50px 100px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div style="flex-grow: 1;">5</div>
+        <div style="flex-grow: 1;">6</div>
+    </div>
+</body>
+</html>

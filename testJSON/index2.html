@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Fetch API dengan Card Bootstrap</title>
+  <!-- CSS Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-4">Daftar Produk</h1>
+    <div class="row" id="daftar-produk"></div>
+  </div>
+
+  <!-- JavaScript Bootstrap (Popper.js dan jQuery) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- JavaScript Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    fetch('produk.json')
+      .then(response => response.json())
+      .then(data => {
+        const produkContainer = document.getElementById('daftar-produk');
+        data.produk.forEach(produk => {
+          const card = `
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <img class="card-img-top" src="${produk.gambar}" alt="${produk.nama}">
+                <div class="card-body">
+                  <h4 class="card-title">${produk.nama}</h4>
+                  <h5>${produk.harga}</h5>
+                  <p class="card-text">${produk.deskripsi}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
+            </div>
+          `;
+          produkContainer.innerHTML += card;
+        });
+      })
+      .catch(error => {
+        console.error('Terjadi kesalahan:', error);
+      });
+  </script>
+</body>
+</html>
