@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.container {
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    background-color: burlywood;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.item{
+    margin: 10px;
+    padding: 10px;
+    background-color: lightblue;
+    border: 1px solid black;
+    flex-basis: 100px;
+}
+
+.item:nth-child(2) {
+    order: -1; /* Elemen ini akan tampil lebih dulu */
+    flex-grow: 2;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: steelblue;
+    padding: 10px;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>judul</h1>
+        <p>Lorem </p>
+        <p>Lorem ipsum </p>
+    </div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
